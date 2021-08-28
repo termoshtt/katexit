@@ -2,6 +2,11 @@
 name = "katexit"
 version = "0.1.0"
 edition = "2018"
+description = "Insert KaTeX autorender script into rustdoc"
+documentation = "https://docs.rs/katexit"
+license = "Apache-2.0"
+readme = "../README.md"
+repository = "https://github.com/termoshtt/katexit"
 
 [lib]
 proc-macro = true
@@ -10,6 +15,3 @@ proc-macro = true
 quote = "1.0.9"
 proc-macro2 = "1.0.28"
 syn = { version = "1.0.75", features = ["full", "extra-traits"] }
-
-[dev-dependencies]
-trybuild = "1.0.45"
