@@ -1,0 +1,15 @@
+[package]
+name = "katexit"
+version = "0.1.0"
+edition = "2018"
+
+[lib]
+proc-macro = true
+
+[dependencies]
+quote = "1.0.9"
+proc-macro2 = "1.0.28"
+syn = { version = "1.0.75", features = ["full", "extra-traits"] }
+
+[dev-dependencies]
+trybuild = "1.0.45"
