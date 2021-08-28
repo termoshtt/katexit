@@ -3,5 +3,14 @@ name = "katexit-example"
 version = "0.1.0"
 edition = "2018"
 
-[dependencies.katexit]
-path = "../katexit"
+description = "Rendered example of katexit"
+documentation = "https://docs.rs/katexit-example"
+license = "Apache-2.0"
+readme = "../README.md"
+repository = "https://github.com/termoshtt/katexit"
+
+[dependencies]
+katexit = "0.1.0"
+
+[package.metadata.release]
+no-dev-version = true
