@@ -1,6 +1,4 @@
-use katexit::katexit;
-
-#[katexit]
+#[cfg_attr(doc, katexit::katexit)]
 /// We can write $\LaTeX$ expressions
 ///
 /// Display style
