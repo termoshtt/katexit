@@ -9,8 +9,9 @@ license = "Apache-2.0"
 readme = "../README.md"
 repository = "https://github.com/termoshtt/katexit"
 
-[dependencies]
-katexit = "0.1.0"
+[dependencies.katexit]
+version = "0.1.0"
+path = "../katexit"
 
 [package.metadata.release]
 no-dev-version = true
