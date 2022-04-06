@@ -33,8 +33,27 @@ const KATEX_HEADER: &str = r#"
 "#;
 
 fn katexit2(item: TokenStream2) -> TokenStream2 {
-    quote! {
-        #[doc = #KATEX_HEADER]
-        #item
+    let mut item: syn::Item = syn::parse2(item).unwrap();
+    match item {
+        syn::Item::Const(syn::ItemConst { ref mut attrs, .. })
+        | syn::Item::Enum(syn::ItemEnum { ref mut attrs, .. })
+        | syn::Item::ExternCrate(syn::ItemExternCrate { ref mut attrs, .. })
+        | syn::Item::Fn(syn::ItemFn { ref mut attrs, .. })
+        | syn::Item::ForeignMod(syn::ItemForeignMod { ref mut attrs, .. })
+        | syn::Item::Impl(syn::ItemImpl { ref mut attrs, .. })
+        | syn::Item::Macro(syn::ItemMacro { ref mut attrs, .. })
+        | syn::Item::Macro2(syn::ItemMacro2 { ref mut attrs, .. })
+        | syn::Item::Mod(syn::ItemMod { ref mut attrs, .. })
+        | syn::Item::Static(syn::ItemStatic { ref mut attrs, .. })
+        | syn::Item::Struct(syn::ItemStruct { ref mut attrs, .. })
+        | syn::Item::Trait(syn::ItemTrait { ref mut attrs, .. })
+        | syn::Item::TraitAlias(syn::ItemTraitAlias { ref mut attrs, .. })
+        | syn::Item::Type(syn::ItemType { ref mut attrs, .. })
+        | syn::Item::Union(syn::ItemUnion { ref mut attrs, .. })
+        | syn::Item::Use(syn::ItemUse { ref mut attrs, .. }) => {
+            attrs.push(syn::parse_quote! { #[doc = #KATEX_HEADER] });
+        }
+        _ => {}
     }
+    quote! { #item }
 }
