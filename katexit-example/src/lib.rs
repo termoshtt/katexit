@@ -1,3 +1,7 @@
+#![feature(custom_inner_attributes)]
+#![katexit::katexit]
+//! Module level document example
+
 #[cfg_attr(doc, katexit::katexit)]
 /// We can write $\LaTeX$ expressions
 ///
