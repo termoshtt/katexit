@@ -12,6 +12,3 @@ repository = "https://github.com/termoshtt/katexit"
 [dependencies.katexit]
 version = "0.1.0"
 path = "../katexit"
-
-[package.metadata.release]
-no-dev-version = true

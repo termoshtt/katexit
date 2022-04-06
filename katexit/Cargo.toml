@@ -14,6 +14,3 @@ proc-macro = true
 quote = "1.0.9"
 proc-macro2 = "1.0.28"
 syn = { version = "1.0.75", features = ["full", "extra-traits"] }
-
-[package.metadata.release]
-no-dev-version = true
