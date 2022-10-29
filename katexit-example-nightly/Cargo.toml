@@ -1,6 +1,6 @@
 [package]
 name = "katexit-example-nightly"
-version = "0.1.2"
+version = "0.1.4"
 edition = "2018"
 
 description = "Rendered example of katexit with nightly rustc"
