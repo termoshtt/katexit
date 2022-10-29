@@ -2,4 +2,5 @@
 members = [
   "katexit",
   "katexit-example",
+  "katexit-example-nightly",
 ]

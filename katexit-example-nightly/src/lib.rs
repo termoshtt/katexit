@@ -1,3 +1,7 @@
+#![cfg_attr(doc, feature(prelude_import, custom_inner_attributes))]
+#![cfg_attr(doc, katexit::katexit)]
+//! Module level document example with $\KaTeX$!
+
 #[cfg_attr(doc, katexit::katexit)]
 /// We can write $\LaTeX$ expressions
 ///
