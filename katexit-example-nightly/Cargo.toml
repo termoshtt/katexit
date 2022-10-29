@@ -1,0 +1,14 @@
+[package]
+name = "katexit-example-nightly"
+version = "0.1.2"
+edition = "2018"
+
+description = "Rendered example of katexit with nightly rustc"
+documentation = "https://docs.rs/katexit-example"
+license = "Apache-2.0"
+readme = "../README.md"
+repository = "https://github.com/termoshtt/katexit"
+
+[dependencies.katexit]
+version = "0.1.0"
+path = "../katexit"

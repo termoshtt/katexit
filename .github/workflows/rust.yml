@@ -8,35 +8,60 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        version:
+          - stable
+          - nightly
     steps:
     - uses: actions/checkout@v1
+    - uses: actions-rs/toolchain@v1
+      with:
+        toolchain: ${{ matrix.version }}
+        override: true
+        default: true
+        components: clippy
     - uses: actions-rs/cargo@v1
       with:
         command: test
+        args: --manifest-path=katexit/Cargo.toml
+    - uses: actions-rs/cargo@v1
+      with:
+        command: test
+        args: --manifest-path=katexit-example/Cargo.toml
+    - uses: actions-rs/cargo@v1
+      if: matrix.version == 'nightly'
+      with:
+        command: test
+        args: --manifest-path=katexit-example-nightly/Cargo.toml
 
   check-format:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v1
+    - uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        override: true
+        default: true
+        components: rustfmt
     - uses: actions-rs/cargo@v1
       with:
         command: fmt
         args: -- --check
 
-  doc:
-    runs-on: ubuntu-20.04
-    steps:
-    - uses: actions/checkout@v1
-    - uses: actions-rs/cargo@v1
-      with:
-        command: doc
-        args: --no-deps
-
   clippy:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v1
+    - uses: actions-rs/toolchain@v1
+      with:
+        toolchain: nightly
+        override: true
+        default: true
+        components: clippy
     - uses: actions-rs/cargo@v1
       with:
         command: clippy
