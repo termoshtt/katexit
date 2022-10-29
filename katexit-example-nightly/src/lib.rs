@@ -1,4 +1,4 @@
-#![cfg_attr(doc, feature(prelude_import, custom_inner_attributes))]
+#![feature(prelude_import, custom_inner_attributes)]
 #![cfg_attr(doc, katexit::katexit)]
 //! Module level document example with $\KaTeX$!
 
