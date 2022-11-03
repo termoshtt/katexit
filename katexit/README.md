@@ -24,6 +24,18 @@ See rendered result on [docs.rs](https://docs.rs/katexit-example/0.1.0/katexit_e
 [katex-functions]: https://katex.org/docs/supported.html
 [katex-symbols]: https://katex.org/docs/support_table.html
 
+On nightly rustc, you can use `#![katexit::katexit]` for module level document:
+
+```rust
+#![cfg_attr(doc, feature(prelude_import, custom_inner_attributes))]
+#![cfg_attr(doc, katexit::katexit)]
+//! Module level document example with $\KaTeX$!
+```
+
+Be sure that `cargo test` will runs `rustdoc` for executing doc-test,
+and thus requires nightly compiler.
+See [katexit-example-nightly](./katexit-example-nightly) for detail.
+
 How it works
 -------------
 
