@@ -42,7 +42,6 @@ fn katexit2(item: TokenStream2) -> TokenStream2 {
             | syn::Item::ForeignMod(syn::ItemForeignMod { ref mut attrs, .. })
             | syn::Item::Impl(syn::ItemImpl { ref mut attrs, .. })
             | syn::Item::Macro(syn::ItemMacro { ref mut attrs, .. })
-            | syn::Item::Macro2(syn::ItemMacro2 { ref mut attrs, .. })
             | syn::Item::Mod(syn::ItemMod { ref mut attrs, .. })
             | syn::Item::Static(syn::ItemStatic { ref mut attrs, .. })
             | syn::Item::Struct(syn::ItemStruct { ref mut attrs, .. })
