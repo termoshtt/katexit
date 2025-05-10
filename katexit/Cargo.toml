@@ -1,11 +1,11 @@
 [package]
 name = "katexit"
-version = "0.1.4"
-edition = "2018"
 description = "Insert KaTeX autorender script into rustdoc"
 documentation = "https://docs.rs/katexit"
-license = "Apache-2.0"
-repository = "https://github.com/termoshtt/katexit"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
 
 [lib]
 proc-macro = true
