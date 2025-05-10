@@ -9,5 +9,5 @@ readme.workspace = true
 repository.workspace = true
 
 [dependencies.katexit]
-version = "0.1.5"
+version = "0.1.6"
 path = "../katexit"
