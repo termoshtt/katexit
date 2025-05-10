@@ -2,7 +2,7 @@
 members = ["katexit", "katexit-example", "katexit-example-nightly"]
 
 [workspace.package]
-version = "0.1.5"
+version = "0.1.6"
 edition = "2018"
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/termoshtt/katexit"
